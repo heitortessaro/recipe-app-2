@@ -6,9 +6,11 @@ Here is the [link]([https://github.com/heitortessaro/TriviaGame](https://github.
 
 # The Project
 
-The project is based on the [Open Trivia Database](https://opentdb.com/). 
+The user can see, search, filter, favorite and follow the progress of preparation of recipes and drinks! 
 
-The user can see, search, filter, favorite and follow the progress of preparation of recipes and drinks! Two different APIs are used, one for food and one for drinks. The layout focuses on mobile devices, so all prototypes will be developed on smaller screens.
+Two different APIs are used, one for food and one for drinks. [TheMealDB](https://www.themealdb.com/) is an open, community-maintained database of recipes and ingredients from around the world. The [CockTailDB](https://cocktaildb.com/) API is very similar (even maintained by the same entity) to TheMealDB API, only focused on drinks.
+
+The layout focuses on mobile devices, so all prototypes will be developed on smaller screens.
 
 Recipe App 2 will use the following techs:
 - React
