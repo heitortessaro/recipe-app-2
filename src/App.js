@@ -6,7 +6,7 @@ import NotFound from './pages/NotFound.jsx';
 
 function App() {
   return (
-    <div className="h-screen">
+    <div className="h-screen font-poppins">
       <Routes>
         <Route path="/" element={<Login />} />
 

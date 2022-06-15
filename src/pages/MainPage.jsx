@@ -4,7 +4,7 @@ import Header from '../components/Header';
 export default function MainPage() {
   return (
     <div className=''>
-      <Header />
+      <Header enableSearch={true} title={'Drinks'}/>
       {/* <SearchBar /> 
       <Alert />
       <FooterMenu /> */}
