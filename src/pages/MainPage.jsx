@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import FooterMenu from '../components/FooterMenu';
 import Header from '../components/Header';
+import RecipeCard from '../components/RecipeCard';
 import SearchBar from '../components/SearchBar';
 
 export default function MainPage() {
@@ -14,7 +15,9 @@ export default function MainPage() {
       {/* <Alert /> */}
       <div>
         Lista de receitas
-        <div>RecipeCard</div>
+        <div>
+          <RecipeCard />
+        </div>
       </div>
       <FooterMenu />
     </div>
