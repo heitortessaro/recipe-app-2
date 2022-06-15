@@ -1,4 +1,5 @@
 import React from 'react';
+import FooterMenu from '../components/FooterMenu';
 import Header from '../components/Header';
 
 export default function MainPage() {
@@ -6,12 +7,12 @@ export default function MainPage() {
     <div className=''>
       <Header enableSearch={true} title={'Drinks'}/>
       {/* <SearchBar /> 
-      <Alert />
-      <FooterMenu /> */}
+      <Alert /> */}
       <div>
         Lista de receitas
         <div>RecipeCard</div>
       </div>
+      <FooterMenu />
     </div>
   );
 }
