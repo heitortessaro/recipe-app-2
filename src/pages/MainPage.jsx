@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import FooterMenu from '../components/FooterMenu';
 import Header from '../components/Header';
+import SearchBar from '../components/SearchBar';
 
 export default function MainPage() {
   const location = useLocation();
@@ -9,8 +10,8 @@ export default function MainPage() {
   return (
     <div className=''>
       <Header enableSearch={true} title={title}/>
-      {/* <SearchBar /> 
-      <Alert /> */}
+      <SearchBar /> 
+      {/* <Alert /> */}
       <div>
         Lista de receitas
         <div>RecipeCard</div>
