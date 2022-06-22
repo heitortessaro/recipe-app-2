@@ -8,6 +8,7 @@ import CardShelf from '../components/CardShelf';
 
 export default function MainPage() {
   const location = useLocation();
+  console.log(location.pathname);
   const title = location.pathname.includes('foods')? 'Foods' : 'Drinks';
   return (
     <div className=''>
