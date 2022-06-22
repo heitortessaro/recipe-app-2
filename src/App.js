@@ -2,6 +2,7 @@ import React from 'react';
 import {Routes, Route} from 'react-router-dom';
 import Explore from './pages/Explore.jsx';
 import ExploreIngredient from './pages/ExploreIngredient.jsx';
+import ExploreNationality from './pages/ExploreNationality.jsx';
 import ExploreSelect from './pages/ExploreSelect';
 import Login from './pages/Login.jsx';
 import MainPage from './pages/MainPage.jsx';
@@ -20,6 +21,7 @@ function App() {
         <Route path="/explore/drinks" element={<ExploreSelect />} />
         <Route path="/explore/foods/ingredients" element={<ExploreIngredient />} />
         <Route path="/explore/drinks/ingredients" element={<ExploreIngredient />} />
+        <Route path="/explore/foods/nationalities" element={<ExploreNationality />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
