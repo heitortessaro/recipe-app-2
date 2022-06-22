@@ -9,10 +9,8 @@ function App() {
     <div className="h-screen font-poppins">
       <Routes>
         <Route path="/" element={<Login />} />
-
         <Route path="/foods" element={ <MainPage /> } />
         <Route path="/drinks" element={ <MainPage /> } />
-
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

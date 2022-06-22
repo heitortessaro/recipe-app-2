@@ -4,6 +4,7 @@ import FooterMenu from '../components/FooterMenu';
 import Header from '../components/Header';
 import RecipeCard from '../components/RecipeCard';
 import SearchBar from '../components/SearchBar';
+import CardShelf from '../components/CardShelf';
 
 export default function MainPage() {
   const location = useLocation();
@@ -13,12 +14,14 @@ export default function MainPage() {
       <Header enableSearch={true} title={title}/>
       <SearchBar /> 
       {/* <Alert /> */}
-      <div>
-        Lista de receitas
-        <div>
+      <CardShelf>
           <RecipeCard />
-        </div>
-      </div>
+          <RecipeCard />
+          <RecipeCard />
+          <RecipeCard />
+          <RecipeCard />
+          <RecipeCard />
+      </CardShelf>
       <FooterMenu />
     </div>
   );

@@ -6,7 +6,7 @@ export default function RecipeCard() {
   const navigate = useNavigate();
   return(
     <div 
-      class="card w-60 bg-base-100 shadow-xl cursor-pointer "
+      class="card m-2 w-60 bg-base-100 shadow-xl cursor-pointer "
       onClick={() => navigate('/teste')}
     >
       <figure><img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes" /></figure>
