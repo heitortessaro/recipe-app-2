@@ -18,7 +18,7 @@ export default function MainPage() {
   const title = location.pathname.includes('foods') ? 'foods' : 'drinks';
   const suprise_me = title === 'foods' ? FOOD_SURPRISE : DRINK_SURPRISE;
   const ingredient = title === 'foods' ? FOOD_INGREDIENT : DRINK_INGREDIENT;
-  const showCountry = title === 'Foods' ? true : false;
+  const showCountry = title === 'foods' ? true : false;
   return (
     <div className=''>
       <Header enableSearch={false} title="Explore" />
