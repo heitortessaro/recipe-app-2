@@ -35,7 +35,7 @@ export default function SearchBar() {
           </div>
         </div>
         <div className="mx-auto flex justify-center">
-          <button class="btn btn-primary btn-sm inline-block">Search</button>
+          <button className="btn btn-primary btn-sm inline-block">Search</button>
         </div>
       </div>
     </div>
