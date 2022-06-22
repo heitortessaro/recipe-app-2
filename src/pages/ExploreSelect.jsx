@@ -13,7 +13,7 @@ const FOOD_SURPRISE = 'https://images.unsplash.com/photo-1547573854-74d2a71d0826
 const DRINK_INGREDIENT = 'https://images.unsplash.com/photo-1551198297-094dd136d3e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGRyaW5rc3xlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60';
 const DRINK_SURPRISE = 'https://images.unsplash.com/photo-1438557068880-c5f474830377?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZCUyMHN1cnByaXNlfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60';
 
-export default function MainPage() {
+export default function ExploreSelect() {
   const location = useLocation();
   const title = location.pathname.includes('foods') ? 'foods' : 'drinks';
   const suprise_me = title === 'foods' ? FOOD_SURPRISE : DRINK_SURPRISE;
