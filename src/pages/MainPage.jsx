@@ -8,10 +8,9 @@ import CardShelf from '../components/CardShelf';
 
 export default function MainPage() {
   const location = useLocation();
-  console.log(location.pathname);
   const title = location.pathname.includes('foods')? 'Foods' : 'Drinks';
   return (
-    <div className=''>
+    <div className='flex flex-col min-h-full'>
       <Header enableSearch={true} title={title}/>
       <SearchBar /> 
       {/* <Alert /> */}

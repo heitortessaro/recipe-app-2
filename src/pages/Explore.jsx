@@ -9,12 +9,12 @@ const DRINK = 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixli
 
 export default function Explore() {
   return (
-    <div className=''>
+    <div className='flex flex-col min-h-full'>
       <Header enableSearch={false} title="Explore"/>
       <SearchBar /> 
       <BtnShelf>
-        <OverlayImageBtn  img={FOOD} destiny='/explore/foods' name='Explore Foods'/>
-        <OverlayImageBtn  img={DRINK} destiny='/explore/drinks' name='Explore Drinks'/>
+        <OverlayImageBtn img={FOOD} destiny='/explore/foods' name='Explore Foods'/>
+        <OverlayImageBtn img={DRINK} destiny='/explore/drinks' name='Explore Drinks'/>
       </BtnShelf>
       <FooterMenu />
     </div>

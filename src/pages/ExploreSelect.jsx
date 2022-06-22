@@ -20,7 +20,7 @@ export default function MainPage() {
   const ingredient = title === 'foods' ? FOOD_INGREDIENT : DRINK_INGREDIENT;
   const showCountry = title === 'foods' ? true : false;
   return (
-    <div className=''>
+    <div className='flex flex-col min-h-full'>
       <Header enableSearch={false} title="Explore" />
       <SearchBar />
       <BtnShelf>
