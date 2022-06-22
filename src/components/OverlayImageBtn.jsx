@@ -5,7 +5,7 @@ export default function OverlayImageBtn({ img, destiny, name }) {
   const navigate = useNavigate();
   return (
     <div 
-      className="card m-4 w-60 bg-base-100 shadow-xl cursor-pointer transform transition duration-200 hover:scale-110"
+      className="card m-4 w-60 lg:w-80 bg-base-100 shadow-xl cursor-pointer transform transition duration-200 hover:scale-110"
       onClick={() => navigate(destiny)}
     >
       <figure><img src={img} alt={name} /></figure>
