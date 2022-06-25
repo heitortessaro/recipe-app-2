@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import IngredientsList from '../components/IngredientsList';
 
 
 export default function Recipe() {
@@ -10,6 +11,7 @@ export default function Recipe() {
       <div>imgagem comida</div>
       <div>nome + botões</div>
       <div>ingredientes (menu) </div>
+      <IngredientsList />
       <div>description</div> 
       <div> youtube video </div>
       <div>Carousel</div>
