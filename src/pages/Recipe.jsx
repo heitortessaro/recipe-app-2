@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export default function Explore() {
+export default function Recipe() {
   return (
     <div className='flex flex-col min-h-full'>
       <div>imgagem comida</div>
