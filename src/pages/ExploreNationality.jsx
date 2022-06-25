@@ -11,7 +11,7 @@ export default function ExploreNationality() {
   return (
     <div className='flex flex-col min-h-full'>
       <Header enableSearch={false} title="Explore Ingredients" />
-      <div className='flex justify-center pt-2 bg-base-300'>
+      <div className='flex justify-center pt-2 md:pt-4 bg-base-300'>
         <select class="select select-bordered w-60 mx-auto">
           <option disabled selected>Who shot first?</option>
           <option>Han Solo</option>
