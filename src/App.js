@@ -1,5 +1,6 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
+import DoneRecipes from './pages/DoneRecipes.jsx';
 import Explore from './pages/Explore.jsx';
 import ExploreIngredient from './pages/ExploreIngredient.jsx';
 import ExploreNationality from './pages/ExploreNationality.jsx';
@@ -27,6 +28,7 @@ function App() {
         <Route path="/explore/foods/ingredients" element={<ExploreIngredient />} />
         <Route path="/explore/drinks/ingredients" element={<ExploreIngredient />} />
         <Route path="/explore/foods/nationalities" element={<ExploreNationality />} />
+        <Route path='/done-recipes' element={<DoneRecipes />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
