@@ -1,6 +1,8 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import FooterFinishRecipe from '../components/FooterFinishRecipe';
 import TopRecipeCard from '../components/TopRecepiCard';
+import UsedIngredientsList from '../components/UsedIngredientsList';
 
 export default function RecipeInProgress() {
   const params = useParams();
@@ -14,6 +16,8 @@ export default function RecipeInProgress() {
           Praesent vitae lacinia odio. Aenean porttitor augue est, ut ornare nulla cursus sed. Etiam et urna magna. Mauris finibus vel purus a auctor. Quisque iaculis hendrerit gravida. Sed elementum eros ut elit porta, sit amet euismod arcu porta. Aliquam maximus molestie mi.
         </p>
       </div>
+      <UsedIngredientsList />
+      <FooterFinishRecipe />
     </div>
   );
 }
