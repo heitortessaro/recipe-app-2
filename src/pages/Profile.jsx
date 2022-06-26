@@ -2,7 +2,7 @@ import React from 'react';
 import FooterMenu from '../components/FooterMenu';
 import Header from '../components/Header';
 
-export default function DoneRecipes() {
+export default function Profile() {
   return (
     <div className='flex flex-col min-h-full'>
       <Header enableSearch={false} title={'Profile'} />

@@ -8,6 +8,7 @@ import ExploreSelect from './pages/ExploreSelect';
 import Login from './pages/Login.jsx';
 import MainPage from './pages/MainPage.jsx';
 import NotFound from './pages/NotFound.jsx';
+import Profile from './pages/Profile.jsx';
 import Recipe from './pages/Recipe.jsx';
 import RecipeInProgress from './pages/RecipeInProgress.jsx';
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/explore/drinks/ingredients" element={<ExploreIngredient />} />
         <Route path="/explore/foods/nationalities" element={<ExploreNationality />} />
         <Route path='/done-recipes' element={<DoneRecipes />} />
+        <Route path='/profile' element={<Profile />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
