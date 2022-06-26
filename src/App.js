@@ -1,67 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
-import {Counter} from './features/counter/Counter';
-import './App.css';
-import { Card } from 'flowbite-react';
+import {Routes, Route} from 'react-router-dom';
+import DoneRecipes from './pages/DoneRecipes.jsx';
+import Explore from './pages/Explore.jsx';
+import ExploreIngredient from './pages/ExploreIngredient.jsx';
+import ExploreNationality from './pages/ExploreNationality.jsx';
+import ExploreSelect from './pages/ExploreSelect';
+import FavoriteRecipes from './pages/FavoriteRecipes.jsx';
+import Login from './pages/Login.jsx';
+import MainPage from './pages/MainPage.jsx';
+import NotFound from './pages/NotFound.jsx';
+import Profile from './pages/Profile.jsx';
+import Recipe from './pages/Recipe.jsx';
+import RecipeInProgress from './pages/RecipeInProgress.jsx';
 
 function App() {
   return (
-    <div className="App">
-      <p className="text-ll">Teste</p>
-      <Card href="#">
-        <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-          Noteworthy technology acquisitions 2021
-        </h5>
-        <p className="font-normal text-gray-700 dark:text-gray-400">
-          Here are the biggest enterprise technology acquisitions of 2021 so
-          far, in reverse chronological order.
-        </p>
-      </Card>
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header> */}
+    <div className="h-screen font-poppins">
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/foods" element={ <MainPage /> } />
+        <Route path="/drinks" element={ <MainPage /> } />
+        <Route path="/foods/:id" element={ <Recipe /> } />
+        <Route path="/drinks/:id" element={ <Recipe /> } />
+        <Route path="/foods/:id/in-progress" element={ <RecipeInProgress /> } />
+        <Route path="/drinks/:id/in-progress" element={ <RecipeInProgress /> } />
+        <Route path="/explore" element={<Explore />} />
+        <Route path="/explore/foods" element={<ExploreSelect />} />
+        <Route path="/explore/drinks" element={<ExploreSelect />} />
+        <Route path="/explore/foods/ingredients" element={<ExploreIngredient />} />
+        <Route path="/explore/drinks/ingredients" element={<ExploreIngredient />} />
+        <Route path="/explore/foods/nationalities" element={<ExploreNationality />} />
+        <Route path='/done-recipes' element={<DoneRecipes />} />
+        <Route path='/favorite-recipes' element={<FavoriteRecipes />} />
+        <Route path='/profile' element={<Profile />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 }
