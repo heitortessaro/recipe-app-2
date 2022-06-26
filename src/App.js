@@ -5,6 +5,7 @@ import Explore from './pages/Explore.jsx';
 import ExploreIngredient from './pages/ExploreIngredient.jsx';
 import ExploreNationality from './pages/ExploreNationality.jsx';
 import ExploreSelect from './pages/ExploreSelect';
+import FavoriteRecipes from './pages/FavoriteRecipes.jsx';
 import Login from './pages/Login.jsx';
 import MainPage from './pages/MainPage.jsx';
 import NotFound from './pages/NotFound.jsx';
@@ -30,6 +31,7 @@ function App() {
         <Route path="/explore/drinks/ingredients" element={<ExploreIngredient />} />
         <Route path="/explore/foods/nationalities" element={<ExploreNationality />} />
         <Route path='/done-recipes' element={<DoneRecipes />} />
+        <Route path='/favorite-recipes' element={<FavoriteRecipes />} />
         <Route path='/profile' element={<Profile />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
