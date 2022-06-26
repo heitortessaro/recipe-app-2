@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 // import Carousel from '../components/Carousel';
 import IngredientsList from '../components/IngredientsList';
+import Video from '../components/Video';
 
 
 export default function Recipe() {
@@ -14,13 +15,7 @@ export default function Recipe() {
       <IngredientsList />
       <div>description</div>
       <div> youtube video </div>
-      <div className="bg-base-300 grow py-2">
-        <div className="w-5/6 sm:w-3/4 md:max-w-screen-lg mx-auto">
-          <div className="aspect-w-16 aspect-h-9">
-            <iframe src="https://www.youtube.com/embed/r9jwGansp1E" allowFullScreen />
-          </div>
-        </div>
-      </div>
+      <Video URL="https://www.youtube.com/embed/r9jwGansp1E" />
       {/* <Carousel /> */}
       <div>start button</div>
     </div>
