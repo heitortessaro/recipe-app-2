@@ -8,6 +8,7 @@ import Login from './pages/Login.jsx';
 import MainPage from './pages/MainPage.jsx';
 import NotFound from './pages/NotFound.jsx';
 import Recipe from './pages/Recipe.jsx';
+import RecipeInProgress from './pages/RecipeInProgress.jsx';
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
         <Route path="/drinks" element={ <MainPage /> } />
         <Route path="/foods/:id" element={ <Recipe /> } />
         <Route path="/drinks/:id" element={ <Recipe /> } />
+        <Route path="/foods/:id/in-progress" element={ <RecipeInProgress /> } />
+        <Route path="/drinks/:id/in-progress" element={ <RecipeInProgress /> } />
         <Route path="/explore" element={<Explore />} />
         <Route path="/explore/foods" element={<ExploreSelect />} />
         <Route path="/explore/drinks" element={<ExploreSelect />} />
