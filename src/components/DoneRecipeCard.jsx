@@ -11,7 +11,7 @@ export default function DoneRecipeCard() {
       className="card m-2 w-72 lg:w-96 bg-base-100 shadow-xl transform transition duration-200 hover:scale-105"
     >
       <figure><img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes" /></figure>
-      <div className="p-8 flex flex-row justify-between">
+      <div className="p-8 flex flex-row justify-between items-center">
         <div>
           <h2 className="card-title">New movie is released!</h2>
           <p>{`Done in: ${teste}`}</p>
