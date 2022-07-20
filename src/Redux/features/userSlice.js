@@ -8,12 +8,20 @@ const INITIAL_STATE = {
   avoidFetchAtMainPage: false,
   recepieID: '',
   favoriteLocalStorange: [],
+  userEmail: '',
+  mealsToken: '',
+  cocktailsToken: '',
 }
 
 export const userReducer = createSlice({
   name: 'user',
   initialState: INITIAL_STATE,
   reducers: {
+    setUserInfo: (state, {payload}) => {
+      state.userEmail = payload.email;
+      state.mealsToken = payload.mealsToken;
+      state.cocktailsToken = payload.cocktailsToken;
+    },
     setLoading: (state, _action) => {
       state.loading = true;
     },
@@ -49,7 +57,7 @@ export const userReducer = createSlice({
   // },
 })
 
-// export const { saveLogin, updateCorrectAnswers, updateScore, resetCorrectAnswers, resetScore } = playerReducer.actions;
+export const { setUserInfo } = userReducer.actions;
 
 // export const selectName = (state) => state.player.name;
 // export const selectScore = (state) => state.player.score;

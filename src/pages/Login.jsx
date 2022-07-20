@@ -1,49 +1,38 @@
 import React from 'react';
-// import EmailValidator from 'email-validator';
-// import Input from '../components/Input';
+import { useState, useEffect } from 'react';
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import generateToken from '../services/generateToken';
+import { setUserInfo } from '../Redux/features/userSlice';
 
 export default function Login() {
-  // const [login, setLogin] = useState({
-  //   email: '',
-  //   password: '',
-  //   disabledButton: true,
-  // });
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState();
+  const [loginBtn, setLoginBtn] = useState();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  // const { email, password, disabledButton } = login;
+  const validLogin = () => {
+    // regex from https://regexr.com/3e48o
+    const reEmail = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    const minLength = 6;
+    setLoginBtn(() => false);
+    if (email.match(reEmail) && password.length >= minLength) {
+      setLoginBtn(() => true);
+    }
+  };
 
+  useEffect(() => {
+    validLogin();
+  }, [email, password]);
 
-  // const validLogin = () => {
-  //   const numberValid = 6;
-  //   const validEmail = EmailValidator.validate(email); // true ou false
-  //   const valueToInput = password.length > numberValid;
-
-  //   if (valueToInput && validEmail) {
-  //     setLogin({ ...login, disabledButton: false });
-  //   } else {
-  //     setLogin({ ...login, disabledButton: true });
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   validLogin();
-  // }, [email, password]);
-
-  // const handleChangeLogin = ({ target: { name, value } }) => {
-  //   setLogin({ ...login, [name]: value });
-  // };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   const mealsToken = 1;
-  //   const cocktailsToken = 1;
-  //   localStorage.setItem('mealsToken', JSON.stringify(mealsToken));
-  //   localStorage.setItem('cocktailsToken', JSON.stringify(cocktailsToken));
-  //   localStorage.setItem(
-  //     'user',
-  //     JSON.stringify({ email }),
-  //   );
-  //   history.push('/foods');
-  // };
+  const handleLogin = () => {
+    const tokenSize = 7;
+    const mealsToken = generateToken(tokenSize);
+    const cocktailsToken = generateToken(tokenSize);
+    dispatch(setUserInfo({email, mealsToken, cocktailsToken}));
+    navigate('/foods');
+  }
 
   return (
     <div 
@@ -54,22 +43,26 @@ export default function Login() {
           <h2 className="card-title mb-2">Login</h2>
           <div className="form-control">
             <input
-              // onChange={({ target }) => setName(() => target.value)}
-              // value={name}
+              onChange={({ target }) => setEmail(() => target.value)}
+              value={email}
               type="text"
               placeholder="Email"
               className="input input-bordered input-primary w-full max-w-xs" />
           </div>
           <div className="form-control">
             <input
-              // onChange={({ target }) => setName(() => target.value)}
-              // value={name}
-              type="text"
+              onChange={({ target }) => setPassword(() => target.value)}
+              value={password}
+              type="password"
               placeholder="Senha"
               className="input input-bordered input-primary w-full max-w-xs" />
           </div>
           <div className="card-actions mt-2 justify-center">
-            <button className="btn btn-primary">Login</button>
+            <button 
+              className="btn btn-primary"
+              disabled={!loginBtn}
+              onClick={() => handleLogin()}
+            >Login</button>
           </div>
         </div>
       </div>
