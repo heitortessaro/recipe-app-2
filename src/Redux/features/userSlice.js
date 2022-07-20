@@ -4,7 +4,7 @@ import { getGenericRecipes } from './userActions/getGenericRecipes';
 const INITIAL_STATE = {
   searchBarActive: false,
   loading: false,
-  searchedRecepies: [],
+  searchedRecipes: [],
   searchedIngredients: [],
   avoidFetchAtMainPage: false,
   recepieID: '',
@@ -26,8 +26,8 @@ export const userReducer = createSlice({
     setLoading: (state, _action) => {
       state.loading = true;
     },
-    // saveSearchedRecepies: (state, {payload}) => {
-    //   state.searchedRecepies = payload;
+    // saveSearchedRecipes: (state, {payload}) => {
+    //   state.searchedRecipes = payload;
     //   state.loading = false;
     // },
     handleSearchBar: (state, _action) => {
@@ -52,7 +52,7 @@ export const userReducer = createSlice({
       state.loading = true;
     },
     [getGenericRecipes.fulfilled]: (state, {payload}) => {
-      state.searchedRecepies = payload;
+      state.searchedRecipes = payload;
       state.loading = false;
     },
     [getGenericRecipes.rejected]: (state) => {
