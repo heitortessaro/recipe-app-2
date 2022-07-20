@@ -1,4 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
+import { getGenericRecipes } from './userActions/getGenericRecipes';
 
 const INITIAL_STATE = {
   searchBarActive: false,
@@ -25,41 +26,44 @@ export const userReducer = createSlice({
     setLoading: (state, _action) => {
       state.loading = true;
     },
-    saveSearchedRecepies: (state, {payload}) => {
-      state.searchedRecepies = payload;
-      state.loading = false;
-    },
+    // saveSearchedRecepies: (state, {payload}) => {
+    //   state.searchedRecepies = payload;
+    //   state.loading = false;
+    // },
     handleSearchBar: (state, _action) => {
       state.searchBarActive = !state.searchBarActive;
     },
-    saveSearchedIngredients: (state, {payload}) => {
-      state.searchedIngredients = payload;
-      state.loading = false;
-    },
-    setAvoidFetchingMainPage: (state, _action) => {
+    // saveSearchedIngredients: (state, {payload}) => {
+    //   state.searchedIngredients = payload;
+    //   state.loading = false;
+    // },
+    setAvoidFetch: (state, _action) => {
       state.avoidFetchAtMainPage = true;
     },
-    cancelAvoidFetchingMainPage: (state, _action) => {
+    cancelAvoidFetch: (state, _action) => {
       state.avoidFetchAtMainPage = false;
     },
-    convertFavoriteLocalStorage: (state, {payload}) => {
-      state.favoriteLocalStorange = payload;
-    }
+    // convertFavoriteLocalStorage: (state, {payload}) => {
+    //   state.favoriteLocalStorange = payload;
+    // }
   },
-  // extraReducers: {
-  //   [getToken.pending]: (state, action) => {
-  //     state.loading = true;
-  //   },
-  //   [getToken.fulfilled]: (state, {payload}) => {
-  //     state.token = payload;
-  //     state.loading = false;
-  //   },
-  // },
+  extraReducers: {
+    [getGenericRecipes.pending]: (state, _action) => {
+      state.loading = true;
+    },
+    [getGenericRecipes.fulfilled]: (state, {payload}) => {
+      state.searchedRecepies = payload;
+      state.loading = false;
+    },
+    [getGenericRecipes.rejected]: (state) => {
+      state.loading = false;
+    },
+  },
 })
 
-export const { setUserInfo } = userReducer.actions;
+export const { setUserInfo, cancelAvoidFetch } = userReducer.actions;
 
-// export const selectName = (state) => state.player.name;
+// export const selectAvoidFetchingMainPage = (state) => state.user.avoidFetchAtMainPage;
 // export const selectScore = (state) => state.player.score;
 // export const selectCorrectAnswers = (state) => state.player.correctAnswers;
 
