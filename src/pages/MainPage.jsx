@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getGenericRecipes } from '../Redux/features/userActions/getGenericRecipes';
 import { cancelAvoidFetch } from '../Redux/features/userSlice';
 import randomIdNumber from '../helpers/randomIdNumber';
+import Loading from '../components/Loading';
 
 export default function MainPage() {
   const location = useLocation();
@@ -28,8 +29,8 @@ export default function MainPage() {
   return (
     <div className='flex flex-col min-h-full'>
       <Header enableSearch={true} title={title}/>
-      <SearchBar /> 
-      {/* <Alert /> */}
+      {/* <SearchBar />  */}
+      {loading && <Loading />}
       {searchedRecipes.length > 0 && !loading && (
         <CardShelf>
           {searchedRecipes.map((rec) => (
